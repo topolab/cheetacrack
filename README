@@ -1,0 +1,31 @@
+Cheetacrack is a small python script for the purpose of recovering
+factory WPA/WPA2 keys from Pirelli wifi modem/routers.
+
+It is a free and open source project, released under the GPL terms.
+For further details please read LICENCE.
+
+To run this script you need to have python libraries installed.
+
+Note: It is compatible with Backtrack 5+ and other modern Linux
+distributions.
+
+Make the shell script first executable:
+
+chmod +x ./cheetacrack
+
+Then, run it:
+
+./cheetacrack <mac_address>
+
+Example:
+
+./cheetacrack 38:22:9D:A3:00:00
+
+Alternativelly you may call the python script directly and with
+a different file input for "bases":
+
+python ./cheetacrack.py <mac_address> <file_input>
+
+Example:
+
+python ./cheetacrack.py 38:22:9D:A3:00:00 bases.lst
